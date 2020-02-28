@@ -2,7 +2,7 @@ import React from 'react';
 import { Platform, Text } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-
+import Compte from '../screens/Compte'
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
@@ -20,6 +20,13 @@ const HomeStack = createStackNavigator(
   config
 );
 
+const CompteStack = createStackNavigator(
+  {
+    Compte: {screen: Compte, navigationOptions: {header: null, tabBarVisible: false}}
+  },
+  config,
+);
+
 HomeStack.navigationOptions = {
   tabBarLabel: 'Map',
   tabBarIcon: ({ focused }) => (
@@ -35,6 +42,17 @@ HomeStack.navigationOptions = {
 };
 
 HomeStack.path = '';
+
+
+CompteStack.navigationOptions = ({navigation}) => {
+  let tabBarVisible = false;
+
+    return {
+       tabBarVisible
+    };
+};
+
+CompteStack.path = '';
 
 const LinksStack = createStackNavigator(
   {
@@ -72,6 +90,7 @@ const tabNavigator = createBottomTabNavigator({
   HomeStack,
   LinksStack,
   SettingsStack,
+  // CompteStack
 });
 
 tabNavigator.path = '';
