@@ -5,6 +5,7 @@ import scooterData from "../scooter/data"
 import borneData from "../scooter/borne"
 import Logo from "../components/logo";
 import Button from "../components/button"
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default class HomeScreen extends React.Component {
   render() {
@@ -12,7 +13,7 @@ export default class HomeScreen extends React.Component {
     return (
       <View style={{flex: 1}}>
         <MapView
-        style={{ flex: 1 }}
+        style={{ flex: 1}}
         // provider={PROVIDER_GOOGLE}
         showsUserLocation
         initialRegion={{
@@ -45,15 +46,13 @@ export default class HomeScreen extends React.Component {
             description={"DFRZ"}
             />
             ))}
-          {/* <View style={{alignItems: 'flex-end', justifyContent: 'flex-end'}}>
-          <Button/>
-          </View> */}
-          {/* <View style={styles.buttonContainer}>
+          {/* <Button/> */}
+          </MapView>
+          <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.push('Qrcode')}>
             <View style={styles.bubble}>
             <Text>Scanner et rouler</Text>
             </View>
-          </View> */}
-          </MapView>
+          </TouchableOpacity>
         </View>
     );
   }
@@ -67,10 +66,12 @@ const styles = StyleSheet.create({
   },
   bubble: {
     flex: 1,
-    backgroundColor: 'rgba(235, 210, 52,0.7)',
+    backgroundColor: 'rgba(255, 195, 77,1)',
     paddingHorizontal: 18,
     paddingVertical: 12,
     borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
 
 })

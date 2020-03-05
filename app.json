@@ -26,6 +26,7 @@
     "ios": {
       "supportsTablet": true
     },
-    "description": "a little lime clone app"
+    "description": "a little lime clone app",
+    "githubUrl": "https://github.com/anagobabatunde/troot-moov"
   }
 }

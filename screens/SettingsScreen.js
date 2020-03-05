@@ -40,7 +40,7 @@ export default function SettingsScreen({ navigation }) {
       <Text style={{fontFamily: 'PingFangHK-Semibold', fontSize: 15, paddingLeft: 70}}>Sécurité</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={{backgroundColor: '#F1C626', width: 'auto', height: 50, flexDirection: 'row', alignItems: 'center', height: 70}} onPress={() => navigation.push('Compte')}>
+      <TouchableOpacity style={{backgroundColor: '#F1C626', width: 'auto', height: 50, flexDirection: 'row', alignItems: 'center', height: 70}} onPress={() => navigation.push('Chartre')}>
       <MaterialCommunityIcons name="newspaper" size={32} color="black"/>
       <Text style={{fontFamily: 'PingFangHK-Semibold', fontSize: 15, paddingLeft: 70}}>Chartre</Text>
       </TouchableOpacity>
